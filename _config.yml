@@ -1,2 +1,3 @@
-name: Rowells Family Sweepstake
+The Family Sweepstake
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
