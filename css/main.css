@@ -52,3 +52,15 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgb(252, 126, 20, 0.1);
   border-radius: 0 4px 4px 0;
 }
+
+.gold {
+  color: gold;
+}
+
+.silver {
+  color: silver;
+}
+
+.bronze {
+  color: #CD7F32;
+}
