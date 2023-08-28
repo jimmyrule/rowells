@@ -2,15 +2,3 @@ html, body {
   background-color: var(--bs-gray-100);
   font-size: 18px;
 }
-
-.navbar {
-  background-color: #86E7B8;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 1.25rem;
-}
-
-.eliminated {
-  opacity: 0.3;
-}
