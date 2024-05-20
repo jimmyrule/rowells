@@ -1,9 +1,9 @@
 id,prize,description,amount,team
-1,Winner,The tournament winning team.,£40,
-2,Runner-up,The losing finalists.,£15,
-3,Most goals scored,Excluding penalty shoot-outs.,£10,
-4,First penalty save,Excluding penalty shoot-outs.,£10,
-5,First penalty shoot-out win,In the event of no penalty shoot-outs the prize will be split between winner and runner-up.,£10,
-6,Most goals conceded,Excluding penalty shoot-outs.,£10,
-7,Most cards (red + yellow),Most red cards will decide in the event of more than one team finishing with an equal number of cards.,£10,
-8,First team eliminated,Fewest goals scored will decide in the event of more than one team being eliminated at the same time.,£10,
+1,Winner,The tournament winning team.,£40,4
+2,Runner-up,The losing finalists.,£15,17
+3,Most goals scored,Excluding penalty shoot-outs.,£10,3
+4,First penalty save,Excluding penalty shoot-outs.,£10,9
+5,First penalty shoot-out win,In the event of no penalty shoot-outs the prize will be split between winner and runner-up.,£10,7
+6,Most goals conceded,Excluding penalty shoot-outs.,£10,20
+7,Most cards (red + yellow),Most red cards will decide in the event of more than one team finishing with an equal number of cards.,£10,6
+8,First team eliminated,Fewest goals scored will decide in the event of more than one team being eliminated at the same time.,£10,11
