@@ -77,7 +77,13 @@ Promise.all([fetchCSV('/assets/files/players.csv'), fetchCSV('/assets/files/team
                     tdTeam1.classList.add('eliminated');
                 }
             } else {
-                tdTeam1.textContent = '';
+                //tdTeam1.textContent = '';
+                const labelPlace = document.createElement('i');
+                labelPlace.classList.add('fas');
+                labelPlace.classList.add('fa-volleyball-ball');
+                labelPlace.classList.add('fa-2x');
+                labelPlace.classList.add('text-dark-grey');
+                tdTeam1.appendChild(labelPlace);
             }
             tr.appendChild(tdTeam1);
 
@@ -100,7 +106,13 @@ Promise.all([fetchCSV('/assets/files/players.csv'), fetchCSV('/assets/files/team
                     tdTeam2.classList.add('eliminated');
                 }
             } else {
-                tdTeam2.textContent = '';
+                //tdTeam2.textContent = '';
+                const labelPlace = document.createElement('i');
+                labelPlace.classList.add('fas');
+                labelPlace.classList.add('fa-volleyball-ball');
+                labelPlace.classList.add('fa-2x');
+                labelPlace.classList.add('text-dark-grey');
+                tdTeam2.appendChild(labelPlace);
             }
             tr.appendChild(tdTeam2);
 

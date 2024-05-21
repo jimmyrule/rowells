@@ -61,7 +61,12 @@ Promise.all([fetchCSV('/assets/files/prizes.csv'), fetchCSV('/assets/files/teams
                 tdTeam.appendChild(label);
 
             } else {
-                tdTeam.textContent = '';
+                const labelPlace = document.createElement('i');
+                labelPlace.classList.add('fas');
+                labelPlace.classList.add('fa-volleyball-ball');
+                labelPlace.classList.add('fa-2x');
+                labelPlace.classList.add('text-dark-grey');
+                tdTeam.appendChild(labelPlace);
             }
             tr.appendChild(tdTeam);
 
