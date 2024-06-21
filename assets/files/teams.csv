@@ -12,7 +12,7 @@ id,name,url,group,eliminated,prize
 11,Hungary,HUN,A,FALSE,FALSE
 12,Italy,ITA,B,FALSE,FALSE
 13,Netherlands,NED,D,FALSE,FALSE
-14,Poland,POL,D,FALSE,FALSE
+14,Poland,POL,D,TRUE,FALSE
 15,Portugal,POR,F,FALSE,FALSE
 16,Romania,ROU,E,FALSE,FALSE
 17,Scotland,SCO,A,FALSE,FALSE
