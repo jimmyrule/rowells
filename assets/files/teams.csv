@@ -15,7 +15,7 @@ id,name,url,group,eliminated,prize
 14,Poland,POL,D,TRUE,TRUE
 15,Portugal,POR,F,FALSE,FALSE
 16,Romania,ROU,E,FALSE,FALSE
-17,Scotland,SCO,A,FALSE,FALSE
+17,Scotland,SCO,A,TRUE,FALSE
 18,Serbia,SRB,C,FALSE,FALSE
 19,Slovakia,SVK,E,FALSE,FALSE
 20,Slovenia,SVN,C,FALSE,FALSE
