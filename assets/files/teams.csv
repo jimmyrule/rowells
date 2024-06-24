@@ -1,5 +1,5 @@
 id,name,url,group,eliminated,prize
-1,Albania,ALB,B,FALSE,FALSE
+1,Albania,ALB,B,TRUE,FALSE
 2,Austria,AUT,D,FALSE,FALSE
 3,Belgium,BEL,E,FALSE,FALSE
 4,Croatia,CRO,B,FALSE,FALSE
