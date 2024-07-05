@@ -8,12 +8,12 @@ id,name,url,group,eliminated,prize
 7,England,ENG,C,FALSE,FALSE
 8,France,FRA,D,FALSE,FALSE
 9,Georgia,GEO,F,TRUE,FALSE
-10,Germany,GER,A,FALSE,FALSE
+10,Germany,GER,A,TRUE,FALSE
 11,Hungary,HUN,A,TRUE,FALSE
 12,Italy,ITA,B,TRUE,FALSE
 13,Netherlands,NED,D,FALSE,FALSE
 14,Poland,POL,D,TRUE,TRUE
-15,Portugal,POR,F,FALSE,TRUE
+15,Portugal,POR,F,TRUE,TRUE
 16,Romania,ROU,E,TRUE,FALSE
 17,Scotland,SCO,A,TRUE,FALSE
 18,Serbia,SRB,C,TRUE,FALSE
