@@ -20,6 +20,6 @@ id,name,url,group,eliminated,prize
 19,Slovakia,SVK,E,TRUE,FALSE
 20,Slovenia,SVN,C,TRUE,FALSE
 21,Spain,ESP,B,FALSE,TRUE
-22,Switzerland,SUI,A,FALSE,FALSE
-23,Turkey,TUR,F,FALSE,FALSE
+22,Switzerland,SUI,A,TRUE,FALSE
+23,Turkey,TUR,F,TRUE,FALSE
 24,Ukraine,UKR,E,TRUE,FALSE
