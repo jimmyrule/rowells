@@ -6,7 +6,7 @@ id,name,url,group,eliminated,prize
 5,Czech Republic,CZE,F,TRUE,FALSE
 6,Denmark,DEN,C,TRUE,FALSE
 7,England,ENG,C,FALSE,FALSE
-8,France,FRA,D,FALSE,FALSE
+8,France,FRA,D,TRUE,FALSE
 9,Georgia,GEO,F,TRUE,FALSE
 10,Germany,GER,A,TRUE,FALSE
 11,Hungary,HUN,A,TRUE,FALSE
