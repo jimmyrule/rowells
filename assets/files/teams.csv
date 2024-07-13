@@ -11,7 +11,7 @@ id,name,url,group,eliminated,prize
 10,Germany,GER,A,TRUE,FALSE
 11,Hungary,HUN,A,TRUE,FALSE
 12,Italy,ITA,B,TRUE,FALSE
-13,Netherlands,NED,D,FALSE,FALSE
+13,Netherlands,NED,D,TRUE,FALSE
 14,Poland,POL,D,TRUE,TRUE
 15,Portugal,POR,F,TRUE,TRUE
 16,Romania,ROU,E,TRUE,FALSE
