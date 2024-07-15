@@ -5,9 +5,9 @@ id,name,url,group,eliminated,prize
 4,Croatia,CRO,B,TRUE,FALSE
 5,Czech Republic,CZE,F,TRUE,FALSE
 6,Denmark,DEN,C,TRUE,FALSE
-7,England,ENG,C,FALSE,FALSE
+7,England,ENG,C,FALSE,TRUE
 8,France,FRA,D,TRUE,FALSE
-9,Georgia,GEO,F,TRUE,FALSE
+9,Georgia,GEO,F,TRUE,TRUE
 10,Germany,GER,A,TRUE,FALSE
 11,Hungary,HUN,A,TRUE,FALSE
 12,Italy,ITA,B,TRUE,FALSE
@@ -21,5 +21,5 @@ id,name,url,group,eliminated,prize
 20,Slovenia,SVN,C,TRUE,FALSE
 21,Spain,ESP,B,FALSE,TRUE
 22,Switzerland,SUI,A,TRUE,FALSE
-23,Turkey,TUR,F,TRUE,FALSE
+23,Turkey,TUR,F,TRUE,TRUE
 24,Ukraine,UKR,E,TRUE,FALSE
