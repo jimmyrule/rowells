@@ -45,7 +45,7 @@ tr {
   border: 0em solid white;
 }
 
-#csvTablePrizes tr {
+tr {
   background-color: inherit;
   border-bottom: 1px solid var(--border);
 }
@@ -57,7 +57,6 @@ table p {
 .tile {
   border-radius: 2rem;
   box-shadow: 0px 5px 15px rgb(173 181 189 / 0.2);
-  /* border: 1px solid var(--border); */
   background-color: white;
 }
 
