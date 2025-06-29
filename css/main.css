@@ -1,4 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Permanent+Marker&display=swap');
+
+:root {
+  --border: #ced4da;
+  --bg: #f8f9fa;
+}
+
 html, body {
-  background-color: var(--bs-gray-100);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 18px;
+  color: var(--bs-gray-700);
+  background-color: var(--bg);
+}
+
+nav {
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  color: #363635;
+  font-family: "Permanent Marker", cursive;
+}
+
+.text-grey {
+  color: #EBF2FA;
+}
+
+.text-dark-grey {
+  color: var(--bs-gray-500);
+}
+
+.text-small {
+  font-size: 0.8em;
+}
+
+thead tr, thead th {
+  background-color: inherit;
+  border: none;
+}
+
+tr {
+  background-color: white;
+  border: 0em solid white;
+}
+
+#csvTablePrizes tr {
+  background-color: inherit;
+  border-bottom: 1px solid var(--border);
+}
+
+table p {
+  margin-bottom: 0;
+}
+
+.tile {
+  border-radius: 2rem;
+  box-shadow: 0px 5px 15px rgb(173 181 189 / 0.2);
+  /* border: 1px solid var(--border); */
+  background-color: white;
+}
+
+.eliminated {
+  opacity: 0.2;
+}
+
+.prize {
+  color: green;
+  margin-left: 0.5em;
+}
+
+.help-text p {
+  color: var(--bs-gray-500);
+  font-size: 0.7em;
 }
