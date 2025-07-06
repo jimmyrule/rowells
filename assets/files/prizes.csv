@@ -3,6 +3,6 @@ id,prize,description,amount,team
 2,Runner-up,The losing team in the final.,£15,
 3,First penalty save,Excluding penalty shoot-outs.,£10,
 4,First penalty shoot-out win,The prize will be split between winner and runner-up if there are no penalty shoot-outs.,£10,
-5,First team eliminated,Fewest goals scored will decide in the event of more than one team being eliminated at the same time.,£5,
+5,First team eliminated,Fewest goals scored will decide in the event of more than one team being eliminated at the same time.,£5,7
 6,Most cards (red + yellow),Most yellow cards will decide in the event of more than one team finishing with an equal number of cards.,£5,
 7,Most goals conceded,Excluding penalty shoot-outs and fewest games played will decide in the event of more than one team finishing with an equal number of goals conceded.,£5,

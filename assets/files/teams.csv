@@ -5,7 +5,7 @@ id,name,url,group,eliminated,prize
 4,Finland,FIN,A,FALSE,FALSE
 5,France,FRA,D,FALSE,FALSE
 6,Germany,GER,C,FALSE,FALSE
-7,Iceland,ISL,A,FALSE,FALSE
+7,Iceland,ISL,A,TRUE,TRUE
 8,Italy,ITA,B,FALSE,FALSE
 9,Netherlands,NED,D,FALSE,FALSE
 10,Norway,NOR,A,FALSE,FALSE
