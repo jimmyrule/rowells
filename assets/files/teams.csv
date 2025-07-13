@@ -13,5 +13,5 @@ id,name,url,group,eliminated,prize
 12,Portugal,POR,B,TRUE,FALSE
 13,Spain,ESP,B,FALSE,FALSE
 14,Sweden,SWE,C,FALSE,FALSE
-15,Switzerland,SUI,A,TRUE,FALSE
+15,Switzerland,SUI,A,FALSE,FALSE
 16,Wales,WAL,D,FALSE,FALSE
