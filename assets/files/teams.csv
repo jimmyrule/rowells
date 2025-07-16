@@ -8,7 +8,7 @@ id,name,url,group,eliminated,prize
 7,Iceland,ISL,A,TRUE,TRUE
 8,Italy,ITA,B,FALSE,FALSE
 9,Netherlands,NED,D,TRUE,FALSE
-10,Norway,NOR,A,FALSE,FALSE
+10,Norway,NOR,A,TRUE,FALSE
 11,Poland,POL,C,TRUE,FALSE
 12,Portugal,POR,B,TRUE,FALSE
 13,Spain,ESP,B,FALSE,FALSE
