@@ -45,6 +45,12 @@ Promise.all([fetchCSV('/assets/files/prizes.csv'), fetchCSV('/assets/files/teams
             tdPrize.appendChild(label);
             tr.appendChild(tdPrize);
 
+            // Amount column
+            const tdAmount = document.createElement('td');
+            tdAmount.classList.add('text-center');
+            tdAmount.textContent = row.amount;
+            tr.appendChild(tdAmount);
+
             // Team column
             const tdTeam = document.createElement('td');
             tdTeam.classList.add('text-center');
@@ -69,12 +75,6 @@ Promise.all([fetchCSV('/assets/files/prizes.csv'), fetchCSV('/assets/files/teams
                 tdTeam.appendChild(labelPlace);
             }
             tr.appendChild(tdTeam);
-
-            // Amount column
-            const tdAmount = document.createElement('td');
-            tdAmount.classList.add('text-center');
-            tdAmount.textContent = row.amount;
-            tr.appendChild(tdAmount);
 
             // Append row to table body
             tbody.appendChild(tr);
