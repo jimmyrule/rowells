@@ -76,7 +76,6 @@ table p {
   margin-left: 0.5em;
 }
 
-.help-text p {
+.help-text {
   color: var(--bs-gray-500);
-  font-size: 0.7em;
 }

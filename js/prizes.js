@@ -38,11 +38,14 @@ Promise.all([fetchCSV('/assets/files/prizes.csv'), fetchCSV('/assets/files/teams
             const tdPrize = document.createElement('td');
             tdPrize.textContent = row.prize;
 
-            // Add label to prize column
-            const label = document.createElement('p');
-            tdPrize.classList.add('help-text');
-            label.textContent = row.description;
-            tdPrize.appendChild(label);
+            const icon = document.createElement('i');
+            icon.classList.add('fa-regular', 'fa-circle-question', 'ms-2', 'help-text'); // Bootstrap spacing + color
+            icon.setAttribute('data-bs-toggle', 'tooltip');
+            icon.setAttribute('data-bs-placement', 'right');
+            icon.setAttribute('title', row.description);
+            icon.setAttribute('tabindex', '0');
+            tdPrize.appendChild(icon);
+
             tr.appendChild(tdPrize);
 
             // Amount column
@@ -79,5 +82,14 @@ Promise.all([fetchCSV('/assets/files/prizes.csv'), fetchCSV('/assets/files/teams
             // Append row to table body
             tbody.appendChild(tr);
         });
+
+        // Re-initialize Bootstrap tooltips after DOM update
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        tooltipTriggerList.forEach(tooltipTriggerEl => {
+          new bootstrap.Tooltip(tooltipTriggerEl, {
+            trigger: 'hover focus click'
+          });
+        });
+
     })
     .catch(error => console.error('Error fetching CSV files:', error));
