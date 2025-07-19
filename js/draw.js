@@ -78,12 +78,17 @@ Promise.all([fetchCSV('/assets/files/players.csv'), fetchCSV('/assets/files/team
                 }
             } else {
                 //tdTeam1.textContent = '';
-                const labelPlace = document.createElement('i');
-                labelPlace.classList.add('fas');
-                labelPlace.classList.add('fa-volleyball-ball');
-                labelPlace.classList.add('fa-2x');
-                labelPlace.classList.add('text-dark-grey');
-                tdTeam1.appendChild(labelPlace);
+                const placeholder = document.createElement('i');
+                placeholder.classList.add('fas');
+                placeholder.classList.add('fa-volleyball-ball');
+                placeholder.classList.add('fa-2x');
+                placeholder.classList.add('text-dark-grey');
+                tdTeam.appendChild(placeholder);
+
+                const placeholderLabel = document.createElement('p');
+                placeholderLabel.textContent = "tbc";
+                placeholderLabel.classList.add('text-dark-grey');
+                tdTeam.appendChild(placeholderLabel);
             }
             tr.appendChild(tdTeam1);
 
@@ -107,12 +112,17 @@ Promise.all([fetchCSV('/assets/files/players.csv'), fetchCSV('/assets/files/team
                 }
             } else {
                 tdTeam2.textContent = '';
-                //const labelPlace = document.createElement('i');
-                //labelPlace.classList.add('fas');
-                //labelPlace.classList.add('fa-volleyball-ball');
-                //labelPlace.classList.add('fa-2x');
-                //labelPlace.classList.add('text-dark-grey');
-                //tdTeam2.appendChild(labelPlace);
+                //const placeholder = document.createElement('i');
+                //placeholder.classList.add('fas');
+                //placeholder.classList.add('fa-volleyball-ball');
+                //placeholder.classList.add('fa-2x');
+                //placeholder.classList.add('text-dark-grey');
+                //tdTeam.appendChild(placeholder);
+
+                //const placeholderLabel = document.createElement('p');
+                //placeholderLabel.textContent = "tbc";
+                //placeholderLabel.classList.add('text-dark-grey');
+                //tdTeam.appendChild(placeholderLabel);
             }
             tr.appendChild(tdTeam2);
 

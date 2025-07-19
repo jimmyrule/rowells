@@ -70,12 +70,17 @@ Promise.all([fetchCSV('/assets/files/prizes.csv'), fetchCSV('/assets/files/teams
                 tdTeam.appendChild(label);
 
             } else {
-                const labelPlace = document.createElement('i');
-                labelPlace.classList.add('fas');
-                labelPlace.classList.add('fa-volleyball-ball');
-                labelPlace.classList.add('fa-2x');
-                labelPlace.classList.add('text-dark-grey');
-                tdTeam.appendChild(labelPlace);
+                const placeholder = document.createElement('i');
+                placeholder.classList.add('fas');
+                placeholder.classList.add('fa-volleyball-ball');
+                placeholder.classList.add('fa-2x');
+                placeholder.classList.add('text-dark-grey');
+                tdTeam.appendChild(placeholder);
+
+                const placeholderLabel = document.createElement('p');
+                placeholderLabel.textContent = "tbc";
+                placeholderLabel.classList.add('text-dark-grey');
+                tdTeam.appendChild(placeholderLabel);
             }
             tr.appendChild(tdTeam);
 
