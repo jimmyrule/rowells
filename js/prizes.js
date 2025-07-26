@@ -1,3 +1,19 @@
+(function () {
+
+// Get the table element
+const table = document.getElementById('csvTablePrizes');
+if (!table) return; // Exit if table isn't present
+
+// Get CSV paths from data attributes
+const prizesCsvPath = table.dataset.csvPrizes;
+const teamsCsvPath = table.dataset.csvTeams;
+
+// Exit if any required paths are missing
+if (!prizesCsvPath || !teamsCsvPath) {
+    console.warn('CSV file paths not specified on table element.');
+    return;
+}
+
 // Function to parse CSV string into array of objects
 function parseCSV(csv) {
     const lines = csv.trim().split('\n');
@@ -13,13 +29,11 @@ function parseCSV(csv) {
 
 // Function to fetch CSV file from the server
 function fetchCSV(url) {
-    return fetch(url)
-        .then(response => response.text())
-        .then(parseCSV);
+    return fetch(url).then(response => response.text()).then(parseCSV);
 }
 
 // Fetch CSV files and generate the table
-Promise.all([fetchCSV('/assets/files/prizes.csv'), fetchCSV('/assets/files/teams.csv')])
+Promise.all([fetchCSV(prizesCsvPath), fetchCSV(teamsCsvPath)])
     .then(([file1Data, file2Data]) => {
         // Create lookup map from file2Data
         const lookupMap = file2Data.reduce((map, obj) => {
@@ -27,8 +41,11 @@ Promise.all([fetchCSV('/assets/files/prizes.csv'), fetchCSV('/assets/files/teams
             return map;
         }, {});
 
-        // Get the table body element
-        const tbody = document.getElementById('csvTablePrizes').querySelector('tbody');
+        // Get the table body element safely
+        const table = document.getElementById('csvTablePrizes');
+        if (!table) return; // Exit early if table is not present on this page
+
+        const tbody = table.querySelector('tbody');
 
         // Populate the table
         file1Data.forEach(row => {
@@ -98,3 +115,5 @@ Promise.all([fetchCSV('/assets/files/prizes.csv'), fetchCSV('/assets/files/teams
 
     })
     .catch(error => console.error('Error fetching CSV files:', error));
+
+    })();

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Permanent+Marker&display=swap');
 
 :root {
   --border: #ced4da;
@@ -6,16 +6,20 @@
 }
 
 html, body {
-  font-family: "Inter", sans-serif;
+  font-family: "Mona Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--bs-gray-700);
   background-color: var(--bg);
 }
 
 nav {
   border-bottom: 1px solid var(--border);
+}
+
+#breadcrumb {
+  border-bottom: none;
 }
 
 .navbar-brand {
@@ -55,15 +59,16 @@ table p {
 }
 
 .tile {
-  border-radius: 1rem;
-  box-shadow: 0px 3px 12px rgb(173 181 189 / 0.2);
   background-color: white;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
+
 
 @media screen and (min-width: 576px) {
   .tile {
-    border-radius: 2rem;
-    box-shadow: 0px 5px 15px rgb(173 181 189 / 0.2);
+    border-radius: 1rem;
+    border: 1px solid var(--border);
   }
 }
 
@@ -78,4 +83,13 @@ table p {
 
 .help-text {
   color: var(--bs-gray-500);
+}
+
+.no-list-style {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.no-list-style li {
+  margin-bottom: 0.5em;
 }
