@@ -11,12 +11,11 @@ html, body {
   font-style: normal;
   font-size: 20px;
   color: var(--bs-gray-700);
-  background-color: var(--bg);
 }
 
-nav {
+/* nav {
   border-bottom: 1px solid var(--border);
-}
+} */
 
 #breadcrumb {
   border-bottom: none;
@@ -56,20 +55,6 @@ tr {
 
 table p {
   margin-bottom: 0;
-}
-
-.tile {
-  background-color: white;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-
-@media screen and (min-width: 576px) {
-  .tile {
-    border-radius: 1rem;
-    border: 1px solid var(--border);
-  }
 }
 
 .eliminated {
