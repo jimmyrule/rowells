@@ -13,10 +13,6 @@ html, body {
   color: var(--bs-gray-700);
 }
 
-/* nav {
-  border-bottom: 1px solid var(--border);
-} */
-
 #breadcrumb {
   border-bottom: none;
 }
@@ -38,18 +34,9 @@ html, body {
   font-size: 0.8em;
 }
 
-thead tr, thead th {
-  background-color: inherit;
-  border: none;
-}
-
 tr {
-  background-color: white;
+  background-color: inherit;
   border: 0em solid white;
-}
-
-tr {
-  background-color: inherit;
   border-bottom: 1px solid var(--border);
 }
 
@@ -77,4 +64,11 @@ table p {
 
 .no-list-style li {
   margin-bottom: 0.5em;
+}
+
+.card-body {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
