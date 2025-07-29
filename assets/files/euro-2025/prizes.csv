@@ -1,8 +1,8 @@
-id,prize,description,amount,team
-1,Winner,The winning team in the final.,£30,3
-2,Runner-up,The losing team in the final.,£15,13
-3,First penalty save,Excluding penalty shootouts.,£10,15
-4,First penalty shootout win,Split between winner and runner-up if there are no penalty shootouts.,£10,3
-5,First team eliminated,Fewest goals scored will decide a tie-break.,£5,7
-6,Most cards,Total yellow and red cards. Most yellow cards and fouls committed will decide a tie-break.,£5,8
-7,Most goals conceded,Excluding penalty shoot-outs and fewest games played will decide a tie-break.,£5,16
+id,prize,team,player,amount,rules
+1,Winner,3,12,£30,The winning team in the final.
+2,Runner-up,13,8,£15,The losing team in the final.
+3,First penalty save,15,10,£10,Excluding penalty shootouts.
+4,First penalty shootout win,3,12,£10,Split between winner and runner-up if there are no penalty shootouts.
+5,First team eliminated,7,11,£5,Fewest goals scored will decide a tie-break.
+6,Most cards,8,9,£5,Total yellow and red cards. Most yellow cards and fouls committed will decide a tie-break.
+7,Most goals conceded,16,15,£5,Excluding penalty shoot-outs and fewest games played will decide a tie-break.

@@ -1,69 +1,92 @@
 (function () {
+    const table = document.getElementById('csvTablePrizes');
+    if (!table) return;
 
-// Get the table element
-const table = document.getElementById('csvTablePrizes');
-if (!table) return; // Exit if table isn't present
+    const prizesCsvPath = table.dataset.csvPrizes;
+    const teamsCsvPath = table.dataset.csvTeams;
+    const playersCsvPath = table.dataset.csvPlayers; // <-- New
 
-// Get CSV paths from data attributes
-const prizesCsvPath = table.dataset.csvPrizes;
-const teamsCsvPath = table.dataset.csvTeams;
+    if (!prizesCsvPath || !teamsCsvPath || !playersCsvPath) {
+        console.warn('CSV file paths not specified on table element.');
+        return;
+    }
 
-// Exit if any required paths are missing
-if (!prizesCsvPath || !teamsCsvPath) {
-    console.warn('CSV file paths not specified on table element.');
-    return;
-}
+    function parseCSV(csv) {
+        const lines = csv.trim().split('\n');
+        const headers = lines[0].trim().split(',');
+        return lines.slice(1).map(line => {
+            const values = line.trim().split(',');
+            return headers.reduce((obj, header, i) => {
+                obj[header] = values[i]?.trim() ?? '';
+                return obj;
+            }, {});
+        });
+    }
 
-// Function to parse CSV string into array of objects
-function parseCSV(csv) {
-    const lines = csv.trim().split('\n');
-    const headers = lines[0].trim().split(',');
-    return lines.slice(1).map(line => {
-        const values = line.trim().split(',');
-        return headers.reduce((obj, header, i) => {
-            obj[header] = values[i].trim();
-            return obj;
+    function fetchCSV(url) {
+        return fetch(url).then(response => response.text()).then(parseCSV);
+    }
+
+    Promise.all([
+        fetchCSV(prizesCsvPath),
+        fetchCSV(teamsCsvPath),
+        fetchCSV(playersCsvPath)
+    ])
+    .then(([prizesData, teamsData, playersData]) => {
+        const teamLookup = teamsData.reduce((map, obj) => {
+            map[obj.id] = obj;
+            return map;
         }, {});
-    });
-}
-
-// Function to fetch CSV file from the server
-function fetchCSV(url) {
-    return fetch(url).then(response => response.text()).then(parseCSV);
-}
-
-// Fetch CSV files and generate the table
-Promise.all([fetchCSV(prizesCsvPath), fetchCSV(teamsCsvPath)])
-    .then(([file1Data, file2Data]) => {
-        // Create lookup map from file2Data
-        const lookupMap = file2Data.reduce((map, obj) => {
+        const playerLookup = playersData.reduce((map, obj) => {
             map[obj.id] = obj;
             return map;
         }, {});
 
-        // Get the table body element safely
-        const table = document.getElementById('csvTablePrizes');
-        if (!table) return; // Exit early if table is not present on this page
-
         const tbody = table.querySelector('tbody');
 
-        // Populate the table
-        file1Data.forEach(row => {
+        prizesData.forEach(row => {
             const tr = document.createElement('tr');
 
             // Prize column
             const tdPrize = document.createElement('td');
             tdPrize.textContent = row.prize;
-
-            const icon = document.createElement('i');
-            icon.classList.add('fa-regular', 'fa-circle-question', 'ms-2', 'help-text'); // Bootstrap spacing + color
-            icon.setAttribute('data-bs-toggle', 'tooltip');
-            icon.setAttribute('data-bs-placement', 'right');
-            icon.setAttribute('title', row.description);
-            icon.setAttribute('tabindex', '0');
-            tdPrize.appendChild(icon);
-
             tr.appendChild(tdPrize);
+
+            // Team column
+            const tdTeam = document.createElement('td');
+            tdTeam.classList.add('text-center', 'text-small');
+            const team = teamLookup[row.team];
+            if (team && team.url) {
+                const img = document.createElement('img');
+                img.src = '/assets/images/' + team.url + '.png';
+                img.alt = team.name;
+                img.height = '30';
+                img.setAttribute('data-bs-toggle', 'tooltip');
+                img.setAttribute('data-bs-placement', 'right');
+                img.setAttribute('title', team.name);
+                img.setAttribute('tabindex', '0');
+                tdTeam.appendChild(img);
+            } else {
+                const placeholder = document.createElement('i');
+                placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-dark-grey');
+                placeholder.setAttribute('data-bs-toggle', 'tooltip');
+                placeholder.setAttribute('data-bs-placement', 'right');
+                placeholder.setAttribute('title', "tbc");
+                placeholder.setAttribute('tabindex', '0');
+                tdTeam.appendChild(placeholder);
+            }
+            tr.appendChild(tdTeam);
+
+            // Player column
+            const tdPlayer = document.createElement('td');
+            const player = playerLookup[row.player];
+            if (player && player.name) {
+                tdPlayer.textContent = player.name;
+            } else {
+                tdPlayer.textContent = 'Player';
+                tdPlayer.classList.add('text-dark-grey');
+            }
+            tr.appendChild(tdPlayer);
 
             // Amount column
             const tdAmount = document.createElement('td');
@@ -71,49 +94,30 @@ Promise.all([fetchCSV(prizesCsvPath), fetchCSV(teamsCsvPath)])
             tdAmount.textContent = row.amount;
             tr.appendChild(tdAmount);
 
-            // Team column
-            const tdTeam = document.createElement('td');
-            tdTeam.classList.add('text-center');
-            tdTeam.classList.add('text-small');
-            if (lookupMap[row.team] && lookupMap[row.team].url) {
-                const img = document.createElement('img');
-                img.src = '/assets/images/' + lookupMap[row.team].url + '.png';
-                img.alt = lookupMap[row.team].name;
-                img.height = '30'
-                tdTeam.appendChild(img);
+            // Rules column
+            const tdRules = document.createElement('td');
+            const icon = document.createElement('i');
+            icon.classList.add('fa-regular', 'fa-circle-question', 'ms-2', 'help-text');
+            icon.setAttribute('data-bs-toggle', 'tooltip');
+            icon.setAttribute('data-bs-placement', 'right');
+            icon.setAttribute('title', row.rules);
+            icon.setAttribute('tabindex', '0');
+            tdRules.appendChild(icon);
+            tr.appendChild(tdRules);
 
-                const label = document.createElement('p');
-                label.textContent = lookupMap[row.team].name;
-                tdTeam.appendChild(label);
-
-            } else {
-                const placeholder = document.createElement('i');
-                placeholder.classList.add('fas');
-                placeholder.classList.add('fa-volleyball-ball');
-                placeholder.classList.add('fa-2x');
-                placeholder.classList.add('text-dark-grey');
-                tdTeam.appendChild(placeholder);
-
-                const placeholderLabel = document.createElement('p');
-                placeholderLabel.textContent = "tbc";
-                placeholderLabel.classList.add('text-dark-grey');
-                tdTeam.appendChild(placeholderLabel);
-            }
-            tr.appendChild(tdTeam);
-
-            // Append row to table body
+            // Add row to table body
             tbody.appendChild(tr);
         });
 
-        // Re-initialize Bootstrap tooltips after DOM update
+        // Re-init tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         tooltipTriggerList.forEach(tooltipTriggerEl => {
-          new bootstrap.Tooltip(tooltipTriggerEl, {
-            trigger: 'hover focus click'
-          });
+            new bootstrap.Tooltip(tooltipTriggerEl, {
+                trigger: 'hover focus click'
+            });
         });
 
     })
     .catch(error => console.error('Error fetching CSV files:', error));
 
-    })();
+})();

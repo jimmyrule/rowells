@@ -94,54 +94,55 @@ Promise.all([fetchCSV(playersCsvPath), fetchCSV(teamsCsvPath)])
                     tdTeam1.classList.add('eliminated');
                 }
             } else {
-                //tdTeam1.textContent = '';
                 const placeholder = document.createElement('i');
                 placeholder.classList.add('fas');
                 placeholder.classList.add('fa-volleyball-ball');
                 placeholder.classList.add('fa-2x');
                 placeholder.classList.add('text-dark-grey');
-                tdTeam.appendChild(placeholder);
+                tdTeam1.appendChild(placeholder);
 
                 const placeholderLabel = document.createElement('p');
                 placeholderLabel.textContent = "tbc";
                 placeholderLabel.classList.add('text-dark-grey');
-                tdTeam.appendChild(placeholderLabel);
+                tdTeam1.appendChild(placeholderLabel);
             }
             tr.appendChild(tdTeam1);
 
-            // Team 2 column
-            const tdTeam2 = document.createElement('td');
-            tdTeam2.classList.add('text-center');
-            tdTeam2.classList.add('text-small');
-            if (lookupMap[row.team2] && lookupMap[row.team2].url) {
-                const img2 = document.createElement('img');
-                img2.src = '/assets/images/' + lookupMap[row.team2].url + '.png';
-                img2.alt = lookupMap[row.team2].name;
-                img2.height = '30'
-                tdTeam2.appendChild(img2);
+            // Only create the Team 2 column if 'team2' exists in the row data
+            if ('team2' in row) {
+                const tdTeam2 = document.createElement('td');
+                tdTeam2.classList.add('text-center', 'text-small');
 
-                const label2 = document.createElement('p');
-                label2.textContent = lookupMap[row.team2].name;
-                tdTeam2.appendChild(label2);
+                if (lookupMap[row.team2] && lookupMap[row.team2].url) {
+                    const img2 = document.createElement('img');
+                    img2.src = '/assets/images/' + lookupMap[row.team2].url + '.png';
+                    img2.alt = lookupMap[row.team2].name;
+                    img2.height = '30';
+                    tdTeam2.appendChild(img2);
 
-                if (lookupMap[row.team2].eliminated === 'TRUE') {
-                    tdTeam2.classList.add('eliminated');
+                    const label2 = document.createElement('p');
+                    label2.textContent = lookupMap[row.team2].name;
+                    tdTeam2.appendChild(label2);
+
+                    if (lookupMap[row.team2].eliminated === 'TRUE') {
+                        tdTeam2.classList.add('eliminated');
+                    }
+                } else {
+                    tdTeam2.textContent = '';
+                    // You can uncomment these lines to add a fallback display if desired
+                    // const placeholder = document.createElement('i');
+                    // placeholder.classList.add('fas', 'fa-volleyball-ball', 'fa-2x', 'text-dark-grey');
+                    // tdTeam2.appendChild(placeholder);
+                    //
+                    // const placeholderLabel = document.createElement('p');
+                    // placeholderLabel.textContent = "tbc";
+                    // placeholderLabel.classList.add('text-dark-grey');
+                    // tdTeam2.appendChild(placeholderLabel);
                 }
-            } else {
-                tdTeam2.textContent = '';
-                //const placeholder = document.createElement('i');
-                //placeholder.classList.add('fas');
-                //placeholder.classList.add('fa-volleyball-ball');
-                //placeholder.classList.add('fa-2x');
-                //placeholder.classList.add('text-dark-grey');
-                //tdTeam.appendChild(placeholder);
 
-                //const placeholderLabel = document.createElement('p');
-                //placeholderLabel.textContent = "tbc";
-                //placeholderLabel.classList.add('text-dark-grey');
-                //tdTeam.appendChild(placeholderLabel);
+                tr.appendChild(tdTeam2);
             }
-            tr.appendChild(tdTeam2);
+
 
             // Append row to table body
             tbody.appendChild(tr);

@@ -1,0 +1,8 @@
+id,prize,team,player,amount,rules
+1,Champion,,,-,The winning team in the final.
+2,Runner-up,,,-,The losing team in the final.
+3,Golden glove,,,-,First to save a penalty outside of a penalty shootout.
+4,Barn door,,,-,Eliminated by a penalty shootout with fewest converted penalties. Prize split between winner and runner-up if there are no penalty shootouts.
+5,Hot head,,,-,Total yellow and red cards. Most yellow cards and fouls committed will decide a tie-break.
+6,Leaky bucket,,,-,Most goals conceded excluding penalty shoot-outs. Fewest games played will decide a tie-break.
+7,Early bath,,,-,Eliminated at the group stage with fewest points. Fewest goals scored and most goals conceded will decide a tie-break.

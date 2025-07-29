@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Permanent+Marker&display=swap');
 
 :root {
-  --border: #ced4da;
+  --border-grey: #ced4da;
   --bg: #f8f9fa;
+  --brand: #4361EE;
+  --grey: #EBF2FA;
+  --primary: #3F37C9;
+  --primary-dark: #3A0CA3;
+  --text-normal: #212529;
 }
 
 html, body {
@@ -10,25 +15,42 @@ html, body {
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
-  color: var(--bs-gray-700);
+  color: var(--text-normal);
   background-color: var(--bg);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 2px solid var(--primary);
+}
+
+a:hover, a:active, a:focus {
+  color: var(--primary-dark);
+  text-decoration: none;
+  border-bottom: 3px solid var(--primary-dark);
+}
+
+.navbar-brand, .navbar-brand:hover, .navbar-brand:active, .navbar-brand:focus {
+  color: inherit;
+  font-family: "Permanent Marker", cursive;
+  border-bottom: none;
+}
+
+.navbar-brand-icon {
+  color: var(--brand);
 }
 
 #breadcrumb {
   border-bottom: none;
 }
 
-.navbar-brand {
-  color: #363635;
-  font-family: "Permanent Marker", cursive;
-}
-
 .text-grey {
-  color: #EBF2FA;
+  color: var(--grey);
 }
 
 .text-dark-grey {
-  color: var(--bs-gray-500);
+  color: var(--bs-gray-500) !important;
 }
 
 .text-small {
@@ -38,7 +60,7 @@ html, body {
 tr {
   background-color: inherit;
   border: 0em solid white;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-grey);
 }
 
 tr:last-child {
@@ -68,7 +90,7 @@ table p {
 }
 
 .no-list-style li {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .table-padding {
