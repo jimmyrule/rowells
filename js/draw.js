@@ -83,7 +83,7 @@ Promise.all([fetchCSV(playersCsvPath), fetchCSV(teamsCsvPath)])
                 const img1 = document.createElement('img');
                 img1.src = '/assets/images/' + lookupMap[row.team1].url + '.svg';
                 img1.alt = lookupMap[row.team1].name;
-                img1.height = '30'
+                img1.width = '50'
                 tdTeam1.appendChild(img1);
 
                 const label1 = document.createElement('p');
@@ -117,7 +117,7 @@ Promise.all([fetchCSV(playersCsvPath), fetchCSV(teamsCsvPath)])
                     const img2 = document.createElement('img');
                     img2.src = '/assets/images/' + lookupMap[row.team2].url + '.svg';
                     img2.alt = lookupMap[row.team2].name;
-                    img2.height = '30';
+                    img2.width = '50';
                     tdTeam2.appendChild(img2);
 
                     const label2 = document.createElement('p');

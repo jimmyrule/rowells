@@ -60,7 +60,7 @@
                 const img = document.createElement('img');
                 img.src = '/assets/images/' + team.url + '.svg';
                 img.alt = team.name;
-                img.height = '30';
+                img.width = '50';
                 img.setAttribute('data-bs-toggle', 'tooltip');
                 img.setAttribute('data-bs-placement', 'right');
                 img.setAttribute('title', team.name);

@@ -53,7 +53,7 @@
         const img = document.createElement('img');
         img.src = '/assets/images/' + row.url + '.svg';
         img.alt = row.team;
-        img.height = '30'
+        img.width = '50'
         tdFlag.appendChild(img);
         tr.appendChild(tdFlag);
 
