@@ -58,7 +58,7 @@
             const team = teamLookup[row.team];
             if (team && team.url) {
                 const img = document.createElement('img');
-                img.src = '/assets/images/' + team.url + '.png';
+                img.src = '/assets/images/' + team.url + '.svg';
                 img.alt = team.name;
                 img.height = '30';
                 img.setAttribute('data-bs-toggle', 'tooltip');

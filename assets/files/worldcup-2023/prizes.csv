@@ -1,0 +1,9 @@
+id,prize,team,player,amount,rules
+1,Winner,27,2,£20,The winning team in the final.
+2,Runner-up,9,14,£15,The losing team in the final.
+3,Third place,28,3,£10,Winner of the 3rd/4th place play-off.
+4,First penalty save,20,13,£5,Excluding penalty shootouts.
+5,First team eliminated,7,3,£5,Fewest goals scored will decide a tie-break.
+6,Most goals conceded,31,15,£5,Excluding penalty shoot-outs and fewest games played will decide a tie-break.
+7,Most cards,6,1,£2,Total yellow and red cards. Most yellow cards and fouls committed will decide a tie-break.
+8,Most goals scored,27,2,£2,Excluding penalty shoot-outs.

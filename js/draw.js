@@ -81,7 +81,7 @@ Promise.all([fetchCSV(playersCsvPath), fetchCSV(teamsCsvPath)])
             tdTeam1.classList.add('text-small');
             if (lookupMap[row.team1] && lookupMap[row.team1].url) {
                 const img1 = document.createElement('img');
-                img1.src = '/assets/images/' + lookupMap[row.team1].url + '.png';
+                img1.src = '/assets/images/' + lookupMap[row.team1].url + '.svg';
                 img1.alt = lookupMap[row.team1].name;
                 img1.height = '30'
                 tdTeam1.appendChild(img1);
@@ -115,7 +115,7 @@ Promise.all([fetchCSV(playersCsvPath), fetchCSV(teamsCsvPath)])
 
                 if (lookupMap[row.team2] && lookupMap[row.team2].url) {
                     const img2 = document.createElement('img');
-                    img2.src = '/assets/images/' + lookupMap[row.team2].url + '.png';
+                    img2.src = '/assets/images/' + lookupMap[row.team2].url + '.svg';
                     img2.alt = lookupMap[row.team2].name;
                     img2.height = '30';
                     tdTeam2.appendChild(img2);

@@ -1,0 +1,4 @@
+id,prize,team,player,amount,rules
+1,Winner,1,2,£32,The winning team in the final.
+2,Runner-up,12,7,£22,The losing team in the final.
+3,Third place,8,3,£10,Winner of the 3rd/4th place play-off.
