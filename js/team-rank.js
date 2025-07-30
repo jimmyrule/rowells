@@ -1,11 +1,11 @@
 (function () {
   // Get the table element
-  const table = document.getElementById('csvTablePrizeRank');
+  const table = document.getElementById('csvTableTeamRank');
   if (!table) return;
 
   // Get CSV path
-  const prizeRankCsvPath = table.dataset.csvPrizeRank;
-  if (!prizeRankCsvPath) {
+  const teamRankCsvPath = table.dataset.csvTeamRank;
+  if (!teamRankCsvPath) {
     console.warn('CSV file path not specified on table element.');
     return;
   }
@@ -29,7 +29,7 @@
   }
 
   // Fetch and build table
-  fetchCSV(prizeRankCsvPath)
+  fetchCSV(teamRankCsvPath)
     .then(file1Data => {
       const tbody = table.querySelector('tbody');
       if (!tbody) return;
@@ -42,10 +42,25 @@
         tdRank.textContent = row.rank;
         tr.appendChild(tdRank);
 
-        // Player column
-        const tdName = document.createElement('td');
-        tdName.textContent = row.player;
-        tr.appendChild(tdName);
+        // Team name column
+        const tdTeamName = document.createElement('td');
+        tdTeamName.textContent = row.team;
+        tr.appendChild(tdTeamName);
+
+        // Flag column
+        const tdFlag = document.createElement('td');
+        tdFlag.classList.add('text-center');
+        const img = document.createElement('img');
+        img.src = '/assets/images/' + row.url + '.svg';
+        img.alt = row.team;
+        img.height = '30'
+        tdFlag.appendChild(img);
+        tr.appendChild(tdFlag);
+
+        // Prize count column
+        const tdPrizeCount = document.createElement('td');
+        tdPrizeCount.textContent = row.prizeCount;
+        tr.appendChild(tdPrizeCount);
 
         // Prize total column
         const tdPrizeTotal = document.createElement('td');
